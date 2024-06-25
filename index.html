@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev"></div>
+                    <div class="prev" @click="prevGame"></div>
                     <div class="next" @click="nextGame"></div>
                     <div class="thumb" v-for="game in slides">
                         <img :src="game.image" :alt="'copertina del gioco: ' + game.title" />

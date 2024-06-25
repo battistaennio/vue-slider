@@ -50,6 +50,16 @@ createApp({
             if(this.activeGame > this.slides.length - 1) {
                 this.activeGame = 0;
             }
-        }
+        },
+        
+        prevGame() {
+            //decremento di uno l'indice
+            this.activeGame--;
+            //se siamo arrivati al primo gioco, imposto l'indice all'ultimo gioco dell'array
+            if(this.activeGame < 0) {
+                this.activeGame = this.slides.length - 1;
+            }
+        },
+
     }
   }).mount("#app");
