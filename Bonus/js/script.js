@@ -10,6 +10,8 @@ createApp({
         return {
             //indice
             activeGame: 0,
+            //dichiaro autoplay impostandolo come null (ovvero senza valore)
+            autoPlay: null,
 
             //array dei giochi
             slides: [
@@ -52,6 +54,7 @@ createApp({
             }
         },
         
+        //funzione da attivare al click di prev
         prevGame() {
             //decremento di uno l'indice
             this.activeGame--;
@@ -60,10 +63,21 @@ createApp({
                 this.activeGame = this.slides.length - 1;
             }
         },
+
+        //funzione che fa partire l'autoplay
+        startAutoPlay() {
+            //assegno ad autoPlay un timer di 3 secondi che attiva la funzione nextGame
+            this.autoPlay = setInterval(this.nextGame, 3000);
+        },
+
+        //funzione che ferma l'autoplay
+        stopAutoPlay() {
+            //interrompo il timer
+            clearInterval(this.autoPlay);
+        },
     },
     mounted() {
-        //imposto timer di 3 secondi che attiva la funzione nextGame
-        setInterval(this.nextGame, 3000)
+        this.startAutoPlay();
     }
   }).mount("#app");
   
