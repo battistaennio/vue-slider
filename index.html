@@ -30,7 +30,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevGame"></div>
                     <div class="next" @click="nextGame"></div>
-                    <div class="thumb" v-for="game in slides">
+                    <div class="thumb" :class="activeGame === index ? 'active' : '' " v-for="(game, index) in slides">
                         <img :src="game.image" :alt="'copertina del gioco: ' + game.title" />
                     </div>
                 </div>
