@@ -6,8 +6,12 @@ const { createApp } = Vue;
 //creo istanza
 createApp({
     data() {
-        //array dei giochi
+        
         return {
+            //indice
+            activeGame: 0,
+
+            //array dei giochi
             slides: [
                 {
                     image: 'img/01.webp',
@@ -36,5 +40,5 @@ createApp({
                 }
             ]
         }
-    }
+    },
   }).mount("#app");
