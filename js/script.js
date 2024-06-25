@@ -41,4 +41,15 @@ createApp({
             ]
         }
     },
+    methods: {
+        //funzione da attivare al click di next
+        nextGame() {
+            //incremento di uno l'indice
+            this.activeGame++;
+            //se siamo arrivati all'ultimo gioco, resetto l'indice a zero
+            if(this.activeGame > this.slides.length - 1) {
+                this.activeGame = 0;
+            }
+        }
+    }
   }).mount("#app");
