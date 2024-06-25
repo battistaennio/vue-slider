@@ -60,7 +60,10 @@ createApp({
                 this.activeGame = this.slides.length - 1;
             }
         },
-
+    },
+    mounted() {
+        //imposto timer di 3 secondi che attiva la funzione nextGame
+        setInterval(this.nextGame, 3000)
     }
   }).mount("#app");
   
